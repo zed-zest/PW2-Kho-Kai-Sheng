@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang = "en">
+	<head>
+	
+		<title>Bloom College-Student Registration Form</title>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	
+		<style>
+			body { background-color: white; max-width: 1000px; margin: 40px auto; border: 3px solid black; }
+			h2 { text-align: center; margin-top: 30px; margin-bottom: 20px; }
+			p { font-size: medium; }
+			.line { border-bottom: 1px solid black; margin-top: 25px; padding-bottom: 5px; }
+			.section-title { text-align: center; font-weight: bold;}
+		
+		</style>
+	</head>
+	<body>
+		<div class="container">
+				<h2><strong>BLOOM COLLEGE</strong><br> <p>Student Registration Form</p></h2>			
+		<form id="regForm">
+		
+		<!--Student Image-->
+		<div class="mb-3" style="display: flex; align-items: center; gap: 10px; max-width: 850px; margin: 0 auto;">
+			<label for="StudentImage" class="form-label" style="margin: 0; white-space: nowrap;">Student Image</label>
+			<input type="file" class="form-control" id="StudentImage" accept="image/*">
+			<p>(less than 5MB)</p>
+		</div>
+		
+		<!--Student name-->
+		<div class="mb-3" style="display: flex; align-items: center; gap: 10px; max-width: 850px; margin: 0 auto;">
+			<label for="StudentName" class="form-label" style="margin: 0; white-space: nowrap;">Student Name</label>
+			<input type="text" class="form-control" id="StudentName" onchange="toUpperCaseText(this)" placeholder="Your Full Nme" style="flex: 1;">
+		</div>
+		
+		<!--Father's name-->
+		<div class="mb-3" style="display: flex; align-items: center; gap: 10px; max-width: 850px; margin: 0 auto;">
+			<label for="FatherName" class="form-label" style="margin: 0; white-space: nowrap;">Father's Name</label>
+			<input type="text" class="form-control" id="FatherName" onchange="toUpperCaseText(this)" placeholder="Father's Full Nme" style="flex: 1;">
+		</div>
+		
+		<!--Mother's name-->
+		<div class="mb-3" style="display: flex; align-items: center; gap: 10px; max-width: 850px; margin: 0 auto;">
+			<label for="Mothername" class="form-label" style="margin: 0; white-space: nowrap;">Mother's Name</label>
+			<input type="text" class="form-control" id="Mothername" onchange="toUpperCaseText(this)" placeholder="Mother's Full Nme" style="flex: 1;">
+		</div>
+		
+		<!--Gender-->
+		<div class="mb-3" style="display: flex; align-items: center; gap: 10px; max-width: 850px; margin: 0 auto;">
+			<label for="Gender" class="form-label">Gender</label>
+			<input type="radio" name="Gender" value="Male" class="ms-5">Male
+			<input type="radio" name="Gender" value="Female" class="ms-3">Female
+		</div>
+		
+		<!--Date of Birth-->
+		<div class="mb-3" style="display: flex; align-items: center; gap: 10px; max-width: 850px; margin: 0 auto;">
+			<label for="DOB" class="form-label" style="margin: 0; white-space: nowrap;">Date of Birth</label>
+			<input type="date" class="form-control" id="DOB" style="flex: 1;">
+		</div>
+		
+		<!--Email-->
+		<div class="mb-3" style="display: flex; align-items: center; gap: 10px; max-width: 850px; margin: 0 auto;">
+			<label for="Email" class="form-label" style="margin: 0; white-space: nowrap;">Email</label>
+			<input type="email" class="form-control" id="Email" onfocus="focusEmail()" onblur="blurEmail()" placeholder="example123@gmail.com" style="flex: 1;">
+		</div>
+		
+		<!--Level-->
+		<div class="mb-3" style="display: flex; align-items: center; gap: 10px; max-width: 850px; margin:20px auto 0 auto;">
+			<label for="Level" class="form-label" style="margin: 0; white-space: nowrap;">Level</label>
+			<select class="form-select" id="Level">
+				<option value="Select option">--Select option--</Option>
+				<option value="Diploma">Diploma</Option>
+				<option value="Degree">Degree</Option>
+				<option value="Phd">Phd</Option>
+			</select>
+		</div>
+		
+		<!--Departmennt-->
+		<div class="mb-3" style="display: flex; align-items: center; gap: 10px; max-width: 850px; margin: 0 auto;">
+			<label for="Department" class="form-label" style="margin: 0; white-space: nowrap;">Deparment</label>
+			<select class="form-select" id="Deparment">
+				<option value="Select option">--Select option--</Option>
+				<option value="Accounting">Accounting</Option>
+				<option value="Engineering">Engineering</Option>
+				<option value="Computing">Computing</Option>
+			</select>
+		</div>
+		
+		<!--Tel/Mobile-->
+		<div class="mb-3" style="display: flex; align-items: center; gap: 10px; max-width: 850px; margin:20px auto 0 auto;">
+			<label for="Tel" class="form-label" style="margin: 0; white-space: nowrap;">Tel/Mobile</label>
+			<input type="Tel" class="form-control" id="Tel" placeholder="019-xxxxxxx" style="flex: 1;">
+		</div>
+		
+		<!--line & Address-->
+		<div class="line"></div>
+		<div class="section-title">Address</div>
+		
+		<!--State-->
+		<div class="mb-3" style="display: flex; align-items: center; gap: 10px; max-width: 850px; margin:20px auto 0 auto;">
+			<label for="State" class="form-label" style="margin: 0; white-space: nowrap;">State</label>
+			<input type="text" class="form-control" id="State" placeholder="State" style="flex: 1;">
+		</div>
+		
+		<!--City-->
+		<div class="mb-3" style="display: flex; align-items: center; gap: 10px; max-width: 850px; margin:20px auto 0 auto;">
+			<label for="City" class="form-label" style="margin: 0; white-space: nowrap;">City</label>
+			<input type="text" class="form-control" id="City" placeholder="City" style="flex: 1;">
+		</div>
+		
+		<!--Postcode-->
+		<div class="mb-3" style="display: flex; align-items: center; gap: 10px; max-width: 850px; margin:20px auto 0 auto;">
+			<label for="Postcode" class="form-label" style="margin: 0; white-space: nowrap;">Postcode</label>
+			<input type="text" class="form-control" id="Postcode" placeholder="Postcode" style="flex: 1;">
+		</div>
+		
+		<!--line-->
+		<div class="line"></div>
+		
+		<!--Button-->
+		<div class="btn-group" style="display: flex; justify-content: center; gap: 30px; max-width: 400px; margin: 20px auto 40px auto;">
+			<button type="button" class="btn btn-primary" onclick="showSuccess()">Register</button>
+			<button type="reset" class="btn btn-secondary ms-2">Reset</button>
+		</div>
+		</form>
+		</div>
+		
+		<!--Bootstrap Modal-->
+		<div class="modal fade" id="successModal" tabindex="-1">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Registration Successful</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+					</div>
+					<div class="modal-body">
+						Your details have been saved!
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
+					</div>
+				</div>
+			</div>
+		</div>		
+		
+		<!--JavaScript-->
+		<script>
+			<!--OnFocus-->
+			function focusEmail() {
+				document.getElementById("Email").style.backgroundColor="lightBlue";
+			}
+			
+			<!--OnBlur-->
+			function blurEmail() {
+				document.getElementById("Email").style.backgroundColor="";
+			}
+			
+			<!--OnChange-->
+			function toUpperCaseText(field) {
+				field.value = field.value.toUpperCase();
+			}
+			
+			<!--Modal Pop-Up-->
+			function showSuccess() {
+				const modal = new
+				bootstrap.Modal(document.getElementById("successModal"));
+				modal.show();
+			}
+		</script>
+		
+		<!-- Optional JavaScript; choose one of the two! -->
+
+		<!-- Option 1: Bootstrap Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+		<!-- Option 2: Separate Popper and Bootstrap JS -->
+		<!--
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+		-->
+	</body>
+</html>
